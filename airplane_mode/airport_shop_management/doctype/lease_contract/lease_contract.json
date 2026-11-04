@@ -1,0 +1,198 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "format:LEASE-{#####}",
+ "creation": "2026-06-26 00:00:00",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "tenant",
+  "contract_status",
+  "contract_type",
+  "column_break_details",
+  "start_date",
+  "end_date",
+  "contract_duration",
+  "section_break_shops",
+  "shops",
+  "section_break_financial",
+  "security_deposit",
+  "total_rent",
+  "column_break_financial",
+  "parent_contract",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "fieldname": "tenant",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Tenant",
+   "options": "Tenant",
+   "reqd": 1
+  },
+  {
+   "default": "Draft",
+   "fieldname": "contract_status",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Contract Status",
+   "options": "Draft\nActive\nExpired\nTerminated\nRenewed"
+  },
+  {
+   "fieldname": "contract_type",
+   "fieldtype": "Select",
+   "label": "Contract Type",
+   "options": "Short Term\nLong Term\nPremium Lease\nTemporary Stall\nEvent Stall"
+  },
+  {
+   "fieldname": "column_break_details",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "start_date",
+   "fieldtype": "Date",
+   "label": "Start Date",
+   "reqd": 1
+  },
+  {
+   "fieldname": "end_date",
+   "fieldtype": "Date",
+   "label": "End Date",
+   "reqd": 1
+  },
+  {
+   "fieldname": "contract_duration",
+   "fieldtype": "Int",
+   "in_list_view": 1,
+   "label": "Contract Duration (Months)",
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_break_shops",
+   "fieldtype": "Section Break",
+   "label": "Shops"
+  },
+  {
+   "fieldname": "shops",
+   "fieldtype": "Table",
+   "label": "Shops",
+   "options": "Contract Shop Item",
+   "reqd": 1
+  },
+  {
+   "fieldname": "section_break_financial",
+   "fieldtype": "Section Break",
+   "label": "Financial"
+  },
+  {
+   "fieldname": "security_deposit",
+   "fieldtype": "Currency",
+   "label": "Security Deposit"
+  },
+  {
+   "fieldname": "total_rent",
+   "fieldtype": "Currency",
+   "label": "Total Rent",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_financial",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "parent_contract",
+   "fieldtype": "Link",
+   "label": "Parent Contract",
+   "options": "Lease Contract"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Lease Contract",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [
+  {
+   "link_doctype": "Rent Payment",
+   "link_fieldname": "contract"
+  }
+ ],
+ "modified": "2026-07-01 13:34:31.962098",
+ "modified_by": "Administrator",
+ "module": "Airport Shop Management",
+ "name": "Lease Contract",
+ "naming_rule": "Expression (old style)",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "amend": 1,
+   "cancel": 1,
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Airport Authority Personnel",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  },
+  {
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Fleet Manager",
+   "share": 1
+  },
+  {
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Travel Agent",
+   "share": 1
+  },
+  {
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Flight Crew Member",
+   "share": 1
+  },
+  {
+   "amend": 1,
+   "cancel": 1,
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": []
+}

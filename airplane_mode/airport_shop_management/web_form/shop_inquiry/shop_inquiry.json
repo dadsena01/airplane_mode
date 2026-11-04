@@ -1,0 +1,84 @@
+{
+ "allow_multiple": 1,
+ "allow_print": 0,
+ "anonymous": 1,
+ "creation": "2026-06-25 00:00:00.000000",
+ "custom_css": "",
+ "doc_type": "Shop Lead",
+ "docstatus": 0,
+ "doctype": "Web Form",
+ "idx": 0,
+ "is_standard": 1,
+ "list_columns": [],
+ "login_required": 0,
+ "max_attachment_size": 0,
+ "modified": "2026-06-25 00:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "Airport Shop Management",
+ "name": "Shop Inquiry",
+ "owner": "Administrator",
+ "published": 1,
+ "route": "shop-inquiry",
+ "show_attachments": 0,
+ "show_list": 0,
+ "show_sidebar": 0,
+ "title": "Shop Inquiry",
+ "web_form_fields": [
+  {
+   "allow_read_on_all_link_options": 0,
+   "fieldname": "shop",
+   "fieldtype": "Link",
+   "hidden": 0,
+   "label": "Shop",
+   "options": "Airport Shop",
+   "read_only": 0,
+   "reqd": 1
+  },
+  {
+   "allow_read_on_all_link_options": 0,
+   "fieldname": "company_name",
+   "fieldtype": "Data",
+   "hidden": 0,
+   "label": "Company Name",
+   "read_only": 0,
+   "reqd": 0
+  },
+  {
+   "allow_read_on_all_link_options": 0,
+   "fieldname": "contact_person",
+   "fieldtype": "Data",
+   "hidden": 0,
+   "label": "Contact Person",
+   "read_only": 0,
+   "reqd": 0
+  },
+  {
+   "allow_read_on_all_link_options": 0,
+   "fieldname": "email",
+   "fieldtype": "Data",
+   "hidden": 0,
+   "label": "Email",
+   "options": "Email",
+   "read_only": 0,
+   "reqd": 1
+  },
+  {
+   "allow_read_on_all_link_options": 0,
+   "fieldname": "phone",
+   "fieldtype": "Data",
+   "hidden": 0,
+   "label": "Phone",
+   "read_only": 0,
+   "reqd": 0
+  },
+  {
+   "allow_read_on_all_link_options": 0,
+   "fieldname": "message",
+   "fieldtype": "Small Text",
+   "hidden": 0,
+   "label": "Message",
+   "read_only": 0,
+   "reqd": 0
+  }
+ ]
+}

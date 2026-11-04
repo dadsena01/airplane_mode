@@ -1,0 +1,14 @@
+{% set color = frappe.form_dict.color or "black" %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Show Me Colors</title>
+</head>
+<body>
+	<h1>Show Me Colors</h1>
+	<div style="width: 300px; height: 200px; background-color: {{ color }}; border: 1px solid #000;"></div>
+	<p>form_dict: {{ frappe.form_dict }}</p>
+</body>
+</html>

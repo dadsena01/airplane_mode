@@ -1,0 +1,33 @@
+{
+ "attach_files": "",
+ "attach_print": 0,
+ "channel": "System Notification",
+ "condition": "doc.status == \"Scheduled\"",
+ "condition_type": "Python",
+ "creation": "2026-06-26 00:26:24.057958",
+ "date_changed": "date_of_departure",
+ "days_in_advance": 1,
+ "docstatus": 0,
+ "doctype": "Notification",
+ "document_type": "Airplane Flight",
+ "enabled": 1,
+ "event": "Days Before",
+ "idx": 0,
+ "is_standard": 1,
+ "message": "<p>The flight {{ doc.name }} is departing in 13 hours!</p>\n",
+ "message_type": "Markdown",
+ "minutes_offset": 0,
+ "modified": "2026-07-07 01:40:07.609122",
+ "modified_by": "Administrator",
+ "module": "Airplane Mode",
+ "name": "Flight Departure Notification",
+ "owner": "Administrator",
+ "recipients": [
+  {
+   "receiver_by_role": "System Manager"
+  }
+ ],
+ "send_system_notification": 1,
+ "send_to_all_assignees": 0,
+ "subject": "Departs in 13 hours!"
+}

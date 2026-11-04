@@ -1,0 +1,33 @@
+{
+ "attach_files": "",
+ "attach_print": 0,
+ "channel": "System Notification",
+ "condition_type": "Python",
+ "creation": "2026-07-07 01:53:06.823288",
+ "date_changed": "end_date",
+ "days_in_advance": 3,
+ "docstatus": 0,
+ "doctype": "Notification",
+ "document_type": "Lease Contract",
+ "enabled": 1,
+ "event": "Days Before",
+ "idx": 0,
+ "is_standard": 1,
+ "message": "Pay your shop rent!",
+ "message_type": "Markdown",
+ "minutes_offset": 0,
+ "modified": "2026-07-07 01:53:06.823288",
+ "modified_by": "Administrator",
+ "module": "Airport Shop Management",
+ "name": "About to expire rent",
+ "owner": "Administrator",
+ "recipients": [
+  {
+   "receiver_by_document_field": "owner",
+   "receiver_by_role": "System Manager"
+  }
+ ],
+ "send_system_notification": 0,
+ "send_to_all_assignees": 0,
+ "subject": "Hey! this {{doc.contract}} about to expire"
+}

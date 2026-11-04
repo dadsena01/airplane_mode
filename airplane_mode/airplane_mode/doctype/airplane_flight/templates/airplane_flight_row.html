@@ -1,0 +1,16 @@
+<div class="py-4 border-b">
+	<div class="flex justify-between items-center">
+		<div>
+			<p>
+				<strong>{{ doc.source_airport_code }}</strong> → <strong>{{ doc.destination_airport_code }}</strong>
+			</p>
+			<p class="text-sm text-gray-600">
+				{{ frappe.utils.format_date(doc.date_of_departure, "d MMMM, YYYY") }} at {{ doc.time_of_departure }} ({{ frappe.utils.format_duration(doc.duration) }})
+			</p>
+			<p class="text-sm text-gray-500">Airline: {{ frappe.db.get_value("Airplane", doc.airplane, "airline") }}</p>
+		</div>
+		<div>
+			<a href="{{ doc.route }}" class="btn btn-default btn-sm">View Flight</a>
+		</div>
+	</div>
+</div>

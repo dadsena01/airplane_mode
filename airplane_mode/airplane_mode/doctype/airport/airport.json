@@ -1,0 +1,121 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "prompt",
+ "creation": "2026-06-05 16:45:38.199635",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+  "field_order": [
+   "country",
+   "city",
+   "code",
+   "column_break_stats",
+   "number_of_shops",
+   "number_of_gates"
+  ],
+  "fields": [
+   {
+    "fieldname": "code",
+    "fieldtype": "Data",
+    "in_list_view": 1,
+    "label": "Code",
+    "reqd": 1
+   },
+   {
+    "fieldname": "city",
+    "fieldtype": "Data",
+    "in_list_view": 1,
+    "label": "City",
+    "reqd": 1
+   },
+   {
+    "fieldname": "country",
+    "fieldtype": "Data",
+    "in_list_view": 1,
+    "label": "Country",
+    "reqd": 1
+   },
+   {
+    "fieldname": "column_break_stats",
+    "fieldtype": "Column Break"
+   },
+   {
+    "fieldname": "number_of_shops",
+    "fieldtype": "Int",
+    "label": "Number of Shops",
+    "read_only": 1
+   },
+   {
+    "fieldname": "number_of_gates",
+    "fieldtype": "Int",
+    "label": "Number of Gates"
+   }
+  ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2026-06-26 00:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "Airplane Mode",
+ "name": "Airport",
+ "naming_rule": "Set by user",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Airport Authority Personnel",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Fleet Manager",
+   "share": 1
+  },
+  {
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Travel Agent",
+   "share": 1
+  },
+  {
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Flight Crew Member",
+   "share": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": []
+}

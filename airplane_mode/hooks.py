@@ -70,8 +70,6 @@ app_license = "mit"
 # automatically create page for each record of this doctype
 # website_generators = ["Web Page"]
 
-# automatically load and sync documents of this doctype from downstream apps
-# importable_doctypes = [doctype_1]
 
 # Jinja
 # ----------
@@ -149,23 +147,17 @@ app_license = "mit"
 # Scheduled Tasks
 # ---------------
 
-# scheduler_events = {
-# 	"all": [
-# 		"airplane_mode.tasks.all"
-# 	],
-# 	"daily": [
-# 		"airplane_mode.tasks.daily"
-# 	],
-# 	"hourly": [
-# 		"airplane_mode.tasks.hourly"
-# 	],
-# 	"weekly": [
-# 		"airplane_mode.tasks.weekly"
-# 	],
-# 	"monthly": [
-# 		"airplane_mode.tasks.monthly"
-# 	],
-# }
+scheduler_events = {
+	"monthly": ["airplane_mode.airplane_mode.tasks.send_rent_reminders"],
+}
+
+
+# Fixtures
+# ---------
+
+fixtures = [
+	{"dt": "Shop Type"},
+]
 
 # Testing
 # -------
@@ -255,4 +247,3 @@ app_license = "mit"
 # ------------
 # List of apps whose translatable strings should be excluded from this app's translations.
 # ignore_translatable_strings_from = []
-

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{ shop.shop_name if shop else "Shop" }} — Airport Shop</title>
+<meta name="description" content="View details for {{ shop.shop_name if shop else '' }} at {{ airport_name or (shop.airport if shop else '') }}">
+<link rel="stylesheet" href="/assets/airplane_mode/css/picnic.css">
+<style>
+.hero {
+	text-align: center;
+	padding: 50px 20px;
+	background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url("https://images.unsplash.com/photo-1464037866556-6812c9d1c72e?w=1200&q=80") center/cover;
+}
+.hero h1 { margin: 0; color: #fff; font-size: 24px; }
+.hero p { margin: 8px 0 0; color: #ccc; }
+.wrapper { max-width: 800px; margin: 0 auto; padding: 20px; }
+.badge { font-size: 12px; padding: 2px 8px; border-radius: 3px; font-weight: 600; }
+.badge-available { background: #d4edda; color: #155724; }
+.badge-occupied { background: #cce5ff; color: #004085; }
+.badge-reserved { background: #fff3cd; color: #856404; }
+.badge-under-maintenance { background: #e8daef; color: #6c3483; }
+.badge-closed { background: #e2e3e5; color: #383d41; }
+.back-bar { background: #1a1a2e; padding: 8px 20px; }
+.back-bar a { color: #ccc; text-decoration: none; font-size: 13px; }
+.back-bar a:hover { color: #fff; }
+.cta { background: #2563eb; border-radius: 8px; padding: 20px; text-align: center; color: #fff; margin-top: 15px; }
+.cta a { display: inline-block; background: #fff; color: #2563eb; padding: 8px 24px; border-radius: 6px; text-decoration: none; font-weight: 600; font-size: 13px; }
+</style>
+</head>
+<body>
+{% if shop %}
+
+<div class="back-bar">
+	<a href="/shops">&larr; Back to All Shops</a>
+</div>
+
+<div class="hero">
+	<h1>{{ shop.shop_name }}</h1>
+	<p>{{ airport_name or shop.airport }} &middot; Shop {{ shop.shop_number }}</p>
+</div>
+
+<div class="wrapper">
+
+<div class="flex two-600">
+	<div class="card col">
+		<article>
+			<header>Details</header>
+			<section>
+				<p><strong>Status</strong> <span class="badge badge-{{ shop.shop_status|lower|replace(' ', '-') }}">{{ shop.shop_status }}</span></p>
+				<p><strong>Type</strong> {{ shop.shop_type or "General" }}</p>
+				<p><strong>Area</strong> {{ shop.area_sq_ft or "—" }} sq ft</p>
+				<p><strong>Airport</strong> {{ airport_name or shop.airport }}</p>
+			</section>
+		</article>
+	</div>
+
+	{% if contract %}
+	<div class="card col">
+		<article>
+			<header>Current Lease</header>
+			<section>
+				<p><strong>Tenant</strong> {{ tenant_name }}</p>
+				<p><strong>Rent</strong> <span style="font-size: 22px; font-weight: 700;">{{ formatted_rent }}</span></p>
+				<p><strong>Period</strong> {{ contract_start }} &rarr; {{ contract_end }}</p>
+			</section>
+		</article>
+	</div>
+	{% else %}
+	<div class="card col">
+		<article>
+			<header>Availability</header>
+			<section>
+				<p>This shop is currently available for lease.</p>
+			</section>
+		</article>
+	</div>
+	{% endif %}
+</div>
+
+<div class="flex two-600" style="margin-top: 15px;">
+	<div class="card col">
+		<article>
+			<header>Shop Details</header>
+			<section>
+				<p><strong>Number</strong> {{ shop.shop_number }}</p>
+				<p><strong>Default Rent</strong> {{ shop.default_monthly_rent or "Not set" }}</p>
+			</section>
+		</article>
+	</div>
+</div>
+
+<div class="cta">
+	<p style="margin: 0 0 10px;">Interested in this shop? Submit an inquiry to learn more.</p>
+	<a href="/shop-inquiry?shop={{ shop.name }}">Submit Inquiry</a>
+</div>
+
+</div>
+
+{% else %}
+
+<div class="wrapper" style="text-align: center; padding-top: 60px;">
+	<p>Shop not found.</p>
+	<p><a href="/shops" style="color: #2563eb;">Browse all shops</a></p>
+</div>
+
+{% endif %}
+
+</body>
+</html>
